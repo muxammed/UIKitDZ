@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         // add subviews and setup UI
         setupViews()
         
-        // setting gestures
+        // setting gestures 
         addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
         guessButton.addTarget(self, action: #selector(guessButtonPressed), for: .touchUpInside)
     }
