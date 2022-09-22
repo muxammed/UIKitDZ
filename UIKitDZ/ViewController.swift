@@ -11,6 +11,11 @@ class ViewController: UIViewController {
     
     var stringShuffle: StringShuffle?
     
+    enum AlertActions {
+        case getValueAction
+        case showOnlyMessage
+    }
+    
     var startButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 5
@@ -50,14 +55,62 @@ class ViewController: UIViewController {
     }
     
     @objc func startButtonAction() {
-        // создание модели и передача в модель текста полученного от пользователя
-        stringShuffle = StringShuffle(toBeShuffled: "hello")
-        guard let result = stringShuffle?.shuffleString(toBeShuffled: "hello") else { return }
-        switch result.1 {
-        case true:
-            print("print success alert")
-        case false:
-            print("show error alert")
+        self.showAlert(title: "Внимание!",
+                       message: "Введи текст, а я его попробую разобрать, напиши \"leohl\"",
+                       style: .alert,
+                       textFieldsTexts: ["leohl"],
+                       act: .getValueAction,
+                       keyboard: .default)
+    }
+    
+    func showAlert(title: String,
+                   message: String,
+                   style: UIAlertController.Style,
+                   textFieldsTexts: [String],
+                   act: AlertActions,
+                   keyboard: UIKeyboardType) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        var action = UIAlertAction()
+
+        switch act {
+        case .getValueAction:
+            // action for getting user fio
+            action = UIAlertAction(title: "Ok", style: .default) { [self] _ in
+                // создание модели и передача в модель текста полученного от пользователя
+                guard let enteredString = alertController.textFields?.first?.text else { return }
+                stringShuffle = StringShuffle(toBeShuffled: enteredString)
+                guard let result = stringShuffle?.shuffleString(toBeShuffled: enteredString) else { return }
+                switch result.1 {
+                case true:
+                    self.showAlert(title: "Результат",
+                                   message: "Я разобрался что это за слово :). Это слово \(result.0)",
+                                   style: .alert,
+                                   textFieldsTexts: [],
+                                   act: .showOnlyMessage,
+                                   keyboard: .default)
+                case false:
+                    // show error alert
+                    self.showAlert(title: "Я же просил",
+                                   message: "Я же просил введи нужное мне слово \"leohl\"",
+                                   style: .alert,
+                                   textFieldsTexts: [],
+                                   act: .showOnlyMessage,
+                                   keyboard: .default)
+                }
+            }
+        default:
+            action = UIAlertAction(title: "Ok", style: .default)
         }
+        
+        for textField in textFieldsTexts {
+            alertController.addTextField { textFieldTemp in
+                textFieldTemp.placeholder = textField
+                textFieldTemp.keyboardType = keyboard
+            }
+        }
+            
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

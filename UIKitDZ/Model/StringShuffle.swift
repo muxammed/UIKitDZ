@@ -11,6 +11,7 @@ struct StringShuffle {
     let toBeShuffled: String
     
     func shuffleString(toBeShuffled: String) -> (String, Bool) {
+        print("gele \(toBeShuffled)")
         return toBeShuffled.lowercased() == "leohl" ? ("hello", true) : ("Please enter the \"leohl\"", false)
     }
 }
