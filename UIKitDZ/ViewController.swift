@@ -16,6 +16,26 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    // MARK: - IBOutlet
+
+    // MARK: - Visual Components
+
+    // MARK: - Public Properties
+
+    // MARK: - Private Properties
+
+    // MARK: - Initializers
+
+    // MARK: - UIViewController(*)
+
+    // MARK: - Public methods
+
+    // MARK: - IBAction
+
+    // MARK: - Private Methods
+
+    // MARK: - Types
+
+    // MARK: - Constants
 
 }
-
