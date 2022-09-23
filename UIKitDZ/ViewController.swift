@@ -290,6 +290,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Types
+    
     enum AlertActions {
         case sayWellcome
         case addTwoNumbers
