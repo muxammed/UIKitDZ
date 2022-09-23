@@ -6,16 +6,10 @@
 //
 
 import UIKit
-/// это тестовый ViewController
+/// это ViewController
 class ViewController: UIViewController {
     
-    var stringShuffle: StringShuffle?
-    
-    enum AlertActions {
-        case getValueAction
-        case showOnlyMessage
-    }
-    
+    // MARK: - Visual Components
     var startButton: UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 5
@@ -33,6 +27,11 @@ class ViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
+    
+    // MARK: - Public Properties
+    var stringShuffle: StringShuffle?
+    
+    // MARK: - UIViewController(*)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +40,16 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        setupViews()
+        addGestures()
+    }
+    
+    // MARK: - Public methods
+    func addGestures() {
+        startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
+    }
+    
+    func setupViews() {
         self.view.backgroundColor = .systemIndigo
         self.view.addSubview(startButton)
         self.view.addSubview(resultLabel)
@@ -50,8 +59,6 @@ class ViewController: UIViewController {
         
         let labelSize = CGSize(width: self.view.frame.width - (8 * 2), height: 20)
         resultLabel.frame = CGRect(origin: CGPoint(x: 8, y: (self.view.frame.height / 2) + 28), size: labelSize)
-        
-        startButton.addTarget(self, action: #selector(startButtonAction), for: .touchUpInside)
     }
     
     @objc func startButtonAction() {
@@ -112,5 +119,12 @@ class ViewController: UIViewController {
             
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // MARK: - Types
+
+    enum AlertActions {
+        case getValueAction
+        case showOnlyMessage
     }
 }

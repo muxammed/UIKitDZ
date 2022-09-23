@@ -6,7 +6,7 @@
 //
 
 import Foundation
-/// Models file
+/// StringShuffle - это структура для обработки входящего текста
 struct StringShuffle {
     let toBeShuffled: String
     
