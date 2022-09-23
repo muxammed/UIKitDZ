@@ -9,20 +9,7 @@ import UIKit
 /// это ViewController
 class ViewController: UIViewController {
 
-    // MARK: - Properties
-    enum AlertActions {
-        case sayWellcome
-        case addTwoNumbers
-        case generateGuessNumber
-        case checkGuessNumber
-        case none
-    }
-    
-    var guessNumber: Int?
-    var attemps = 3
-    // MARK: - you can switch between autolayout and manual frame placing views
-    var viaAutoLayout = true
-    
+    // MARK: - Visual Components
     var gradient: CAGradientLayer = {
         let gradient = CAGradientLayer()
         gradient.colors = [UIColor.systemIndigo.cgColor, UIColor.systemIndigo.cgColor]
@@ -66,12 +53,16 @@ class ViewController: UIViewController {
         return label
     }()
     
+    // MARK: - Public Properties
+    var guessNumber: Int?
+    var attemps = 3
+    var viaAutoLayout = true
+    
+    // MARK: - UIViewController(*)
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // setting gestures
-        addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
-        guessButton.addTarget(self, action: #selector(guessButtonPressed), for: .touchUpInside)
+        settingGestures()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -88,9 +79,14 @@ class ViewController: UIViewController {
         setupViews()
     }
     
+    // MARK: - Public methods
+    func settingGestures() {
+        // setting gestures
+        addButton.addTarget(self, action: #selector(addButtonAction), for: .touchUpInside)
+        guessButton.addTarget(self, action: #selector(guessButtonAction), for: .touchUpInside)
+    }
+    
     func setupViews() {
-        
-        // self.view.backgroundColor = .white
         
         self.gradient.frame = self.view.layer.frame
         self.view.layer.insertSublayer(gradient, at: 0)
@@ -145,7 +141,7 @@ class ViewController: UIViewController {
         }
     }
 
-    @objc func addButtonPressed() {
+    @objc func addButtonAction() {
         print("addbutton tapped")
         showAlert(title: "Внимание!",
                   message: "Введите ваше имя",
@@ -155,7 +151,7 @@ class ViewController: UIViewController {
                   keyboard: .numberPad)
     }
     
-    @objc func guessButtonPressed() {
+    @objc func guessButtonAction() {
         print("guess button tapped")
         showAlert(title: "Игра угадайка",
                   message: "Введи целое число. А я загадаю число до этого значения.",
@@ -291,5 +287,14 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 1) {
             self.gradient.layoutIfNeeded()
         }
+    }
+    
+    // MARK: - Types
+    enum AlertActions {
+        case sayWellcome
+        case addTwoNumbers
+        case generateGuessNumber
+        case checkGuessNumber
+        case none
     }
 }
