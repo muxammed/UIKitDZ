@@ -7,19 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1308DFD428E0F81C003A1F70 /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308DFD328E0F81C003A1F70 /* PersonView.swift */; };
+		1308DFD628E0F91C003A1F70 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308DFD528E0F91C003A1F70 /* Person.swift */; };
+		1308DFD828E10625003A1F70 /* AddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1308DFD728E10625003A1F70 /* AddPersonViewController.swift */; };
+		138807E328DE719B00B59CB0 /* BirthdaysViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138807E228DE719B00B59CB0 /* BirthdaysViewController.swift */; };
+		13B301CE28E21AD100E9EB2F /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13B301CD28E21AD100E9EB2F /* LessonViewController.swift */; };
+		13CCD0B028DF3BE7000F2D67 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CCD0AF28DF3BE7000F2D67 /* InputView.swift */; };
+		13CCD0B928DF56AD000F2D67 /* MPLUSRounded1c-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13CCD0B228DF56AC000F2D67 /* MPLUSRounded1c-Medium.ttf */; };
+		13CCD0BA28DF56AD000F2D67 /* MPLUSRounded1c-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13CCD0B328DF56AC000F2D67 /* MPLUSRounded1c-ExtraBold.ttf */; };
+		13CCD0BB28DF56AD000F2D67 /* MPLUSRounded1c-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13CCD0B428DF56AC000F2D67 /* MPLUSRounded1c-Thin.ttf */; };
+		13CCD0BC28DF56AD000F2D67 /* MPLUSRounded1c-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13CCD0B528DF56AC000F2D67 /* MPLUSRounded1c-Black.ttf */; };
+		13CCD0BD28DF56AD000F2D67 /* MPLUSRounded1c-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13CCD0B628DF56AD000F2D67 /* MPLUSRounded1c-Light.ttf */; };
+		13CCD0BE28DF56AD000F2D67 /* MPLUSRounded1c-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13CCD0B728DF56AD000F2D67 /* MPLUSRounded1c-Regular.ttf */; };
+		13CCD0BF28DF56AD000F2D67 /* MPLUSRounded1c-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 13CCD0B828DF56AD000F2D67 /* MPLUSRounded1c-Bold.ttf */; };
 		13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030C28DB3F0C00D84241 /* AppDelegate.swift */; };
 		13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */; };
-		13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC031028DB3F0C00D84241 /* ViewController.swift */; };
+		13FC031128DB3F0C00D84241 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC031028DB3F0C00D84241 /* LoginViewController.swift */; };
 		13FC031428DB3F0C00D84241 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FC031228DB3F0C00D84241 /* Main.storyboard */; };
 		13FC031628DB3F0F00D84241 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13FC031528DB3F0F00D84241 /* Assets.xcassets */; };
 		13FC031928DB3F0F00D84241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FC031728DB3F0F00D84241 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1308DFD328E0F81C003A1F70 /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
+		1308DFD528E0F91C003A1F70 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		1308DFD728E10625003A1F70 /* AddPersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonViewController.swift; sourceTree = "<group>"; };
+		138807E228DE719B00B59CB0 /* BirthdaysViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysViewController.swift; sourceTree = "<group>"; };
+		13B301CD28E21AD100E9EB2F /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		13CCD0AF28DF3BE7000F2D67 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		13CCD0B228DF56AC000F2D67 /* MPLUSRounded1c-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Medium.ttf"; sourceTree = "<group>"; };
+		13CCD0B328DF56AC000F2D67 /* MPLUSRounded1c-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-ExtraBold.ttf"; sourceTree = "<group>"; };
+		13CCD0B428DF56AC000F2D67 /* MPLUSRounded1c-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Thin.ttf"; sourceTree = "<group>"; };
+		13CCD0B528DF56AC000F2D67 /* MPLUSRounded1c-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Black.ttf"; sourceTree = "<group>"; };
+		13CCD0B628DF56AD000F2D67 /* MPLUSRounded1c-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Light.ttf"; sourceTree = "<group>"; };
+		13CCD0B728DF56AD000F2D67 /* MPLUSRounded1c-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Regular.ttf"; sourceTree = "<group>"; };
+		13CCD0B828DF56AD000F2D67 /* MPLUSRounded1c-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MPLUSRounded1c-Bold.ttf"; sourceTree = "<group>"; };
 		13FC030928DB3F0C00D84241 /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FC030C28DB3F0C00D84241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		13FC031028DB3F0C00D84241 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		13FC031028DB3F0C00D84241 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		13FC031328DB3F0C00D84241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13FC031528DB3F0F00D84241 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13FC031828DB3F0F00D84241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +63,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13CCD0B128DF5685000F2D67 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				13CCD0B528DF56AC000F2D67 /* MPLUSRounded1c-Black.ttf */,
+				13CCD0B828DF56AD000F2D67 /* MPLUSRounded1c-Bold.ttf */,
+				13CCD0B328DF56AC000F2D67 /* MPLUSRounded1c-ExtraBold.ttf */,
+				13CCD0B628DF56AD000F2D67 /* MPLUSRounded1c-Light.ttf */,
+				13CCD0B228DF56AC000F2D67 /* MPLUSRounded1c-Medium.ttf */,
+				13CCD0B728DF56AD000F2D67 /* MPLUSRounded1c-Regular.ttf */,
+				13CCD0B428DF56AC000F2D67 /* MPLUSRounded1c-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		13FB8C2C28E89D7600EE8F45 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				13FC031028DB3F0C00D84241 /* LoginViewController.swift */,
+				138807E228DE719B00B59CB0 /* BirthdaysViewController.swift */,
+				1308DFD728E10625003A1F70 /* AddPersonViewController.swift */,
+				13B301CD28E21AD100E9EB2F /* LessonViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		13FB8C2D28E89D8A00EE8F45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				13CCD0AF28DF3BE7000F2D67 /* InputView.swift */,
+				1308DFD328E0F81C003A1F70 /* PersonView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		13FB8C2E28E89D9700EE8F45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1308DFD528E0F91C003A1F70 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		13FC030028DB3F0C00D84241 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +124,12 @@
 		13FC030B28DB3F0C00D84241 /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
+				13CCD0B128DF5685000F2D67 /* Fonts */,
 				13FC030C28DB3F0C00D84241 /* AppDelegate.swift */,
 				13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */,
-				13FC031028DB3F0C00D84241 /* ViewController.swift */,
+				13FB8C2E28E89D9700EE8F45 /* Models */,
+				13FB8C2D28E89D8A00EE8F45 /* Views */,
+				13FB8C2C28E89D7600EE8F45 /* ViewControllers */,
 				13FC031228DB3F0C00D84241 /* Main.storyboard */,
 				13FC031528DB3F0F00D84241 /* Assets.xcassets */,
 				13FC031728DB3F0F00D84241 /* LaunchScreen.storyboard */,
@@ -127,8 +198,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				13FC031928DB3F0F00D84241 /* LaunchScreen.storyboard in Resources */,
+				13CCD0BF28DF56AD000F2D67 /* MPLUSRounded1c-Bold.ttf in Resources */,
+				13CCD0BA28DF56AD000F2D67 /* MPLUSRounded1c-ExtraBold.ttf in Resources */,
+				13CCD0BC28DF56AD000F2D67 /* MPLUSRounded1c-Black.ttf in Resources */,
+				13CCD0B928DF56AD000F2D67 /* MPLUSRounded1c-Medium.ttf in Resources */,
 				13FC031628DB3F0F00D84241 /* Assets.xcassets in Resources */,
 				13FC031428DB3F0C00D84241 /* Main.storyboard in Resources */,
+				13CCD0BE28DF56AD000F2D67 /* MPLUSRounded1c-Regular.ttf in Resources */,
+				13CCD0BB28DF56AD000F2D67 /* MPLUSRounded1c-Thin.ttf in Resources */,
+				13CCD0BD28DF56AD000F2D67 /* MPLUSRounded1c-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,9 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */,
+				13FC031128DB3F0C00D84241 /* LoginViewController.swift in Sources */,
+				138807E328DE719B00B59CB0 /* BirthdaysViewController.swift in Sources */,
+				13CCD0B028DF3BE7000F2D67 /* InputView.swift in Sources */,
+				1308DFD428E0F81C003A1F70 /* PersonView.swift in Sources */,
+				1308DFD628E0F91C003A1F70 /* Person.swift in Sources */,
 				13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */,
 				13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */,
+				13B301CE28E21AD100E9EB2F /* LessonViewController.swift in Sources */,
+				1308DFD828E10625003A1F70 /* AddPersonViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +398,7 @@
 				DEVELOPMENT_TEAM = U68TY7Z9YL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitDZ/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please give access to select image of person whom birthday and other data you saving";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -343,6 +428,7 @@
 				DEVELOPMENT_TEAM = U68TY7Z9YL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UIKitDZ/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please give access to select image of person whom birthday and other data you saving";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
