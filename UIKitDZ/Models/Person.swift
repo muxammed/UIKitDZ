@@ -5,7 +5,6 @@
 //  Created by muxammed on 26.09.2022.
 //
 
-import Foundation
 import UIKit
 /// перечисления гендоров персоны
 enum Gender {

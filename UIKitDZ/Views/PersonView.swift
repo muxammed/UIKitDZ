@@ -9,7 +9,7 @@ import UIKit
 /// кастомный PersonView что бы переиспользовать включает в себя настраиваемые UILabel'ы с данные из структуры Person которая передается во внутрь как параметр также рассчитывает оставшиеся дни до дня рождения Person'а
 /// - Parameters
 ///  - person: Структура Person
-class PersonView: UIView {
+final class PersonView: UIView {
     
     var person: Person?
     

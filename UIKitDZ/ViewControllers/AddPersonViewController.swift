@@ -12,10 +12,8 @@ protocol PersonEnterDelegate: AnyObject {
     func newPersonEntered(person: Person)
 }
 /// AddPersonViewController - модальный VC для добавление нового Person
-class AddPersonViewController: UIViewController {
+final class AddPersonViewController: UIViewController {
     
-    // MARK: - IBOutlet
-
     // MARK: - Visual Components
     var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker(frame: .zero)
@@ -83,7 +81,7 @@ class AddPersonViewController: UIViewController {
     var instagramInputView = InputView()
     
     // MARK: - Public Properties
-    var delegate: PersonEnterDelegate?
+    weak var delegate: PersonEnterDelegate?
     var personImage = UIImage(systemName: "person.crop.circle.fill")
     var picker = UIPickerView()
     let genders = [Gender.male, Gender.female]
@@ -95,17 +93,9 @@ class AddPersonViewController: UIViewController {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         return dateFormatter
     }()
-    // MARK: - Private Properties
-
-    // MARK: - Initializers
 
     // MARK: - UIViewController(*)
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        addViews()
-        setupViews()
-        
+    fileprivate func configure() {
         picker.delegate = self
         picker.dataSource = self
         picker.backgroundColor = Constants.inactiveColor
@@ -115,6 +105,14 @@ class AddPersonViewController: UIViewController {
         instagramInputView.inputTextField.delegate = self
         
         ages = Array(1...100)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        addViews()
+        setupViews()
+        configure()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -174,14 +172,14 @@ class AddPersonViewController: UIViewController {
         view.addSubview(genderInputView)
         view.addSubview(instagramInputView)
     }
-    @objc func doneClick() {
+    @objc func doneClickAction() {
         
         UIView.animate(withDuration: 1) {
             self.picker.isHidden = true
         }
     }
     
-    @objc func cancelClick() {
+    @objc func cancelClickAction() {
         view.endEditing(true)
         UIView.animate(withDuration: 1) {
             self.picker.isHidden = true
@@ -207,9 +205,9 @@ class AddPersonViewController: UIViewController {
         
         addPersonButton.addTarget(self, action: #selector(addPersonButtonAction), for: .touchUpInside)
         cancelButton.addTarget(self, action: #selector(cancelButtonAction), for: .touchUpInside)
-        datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+        datePicker.addTarget(self, action: #selector(handleDatePickerAction(sender:)), for: .valueChanged)
     }
-    @objc func handleDatePicker(sender: UIDatePicker) {
+    @objc func handleDatePickerAction(sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yyyy"
         dateInputView.inputTextField.text = dateFormatter.string(from: sender.date)
@@ -247,15 +245,9 @@ class AddPersonViewController: UIViewController {
         }
         dismiss(animated: true, completion: nil)
     }
-    // MARK: - IBAction
-
-    // MARK: - Private Methods
-
-    // MARK: - Types
-
-    // MARK: - Constants
 }
 
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
 extension AddPersonViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     func imagePickerController(_ picker: UIImagePickerController,
@@ -272,6 +264,7 @@ extension AddPersonViewController: UIImagePickerControllerDelegate, UINavigation
     }
 }
 
+// MARK: - UIPickerViewDelegate, UIPickerViewDataSource
 extension AddPersonViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
@@ -326,6 +319,7 @@ extension AddPersonViewController: UIPickerViewDelegate, UIPickerViewDataSource 
     }
 }
 
+// MARK: - UITextFieldDelegate
 extension AddPersonViewController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
@@ -333,8 +327,7 @@ extension AddPersonViewController: UITextFieldDelegate {
         case 3:
             dateInputView.inputTextField.inputView = datePicker // date picker
         case 4:
-            // alert shower
-            showAlert()
+            showAlertAction()
         default:
             break
         }
@@ -342,7 +335,7 @@ extension AddPersonViewController: UITextFieldDelegate {
         return true
     }
     
-    @objc func showAlert() {
+    @objc func showAlertAction() {
         var instagramString = ""
         let alertController = UIAlertController(title: "",
                                                 message: "Введите username Instagram",
@@ -351,10 +344,10 @@ extension AddPersonViewController: UITextFieldDelegate {
             textField.placeholder = "Например: yashalava2019"
         }
         alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            instagramString = alertController.textFields?[0].text ?? ""
+            instagramString = alertController.textFields?.first?.text ?? ""
             self.instagramInputView.inputTextField.text = instagramString
         }))
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 }

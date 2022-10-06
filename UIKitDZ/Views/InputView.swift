@@ -16,7 +16,7 @@ import UIKit
 ///  - isPasswordTextField: Переключатель в случаи истина UITextField станет password и появится кнопка для вскрытия/сокрытия пароля
 ///  - pickerView: экзепляр UIPickerView для назначение его inputView'ом внутреннего UITextField'a
 ///  - textFieldTag: Int число прописывается как tag UITextField для разделения в методах прокола UITextFieldDelegate, UITextFieldDataSource
-class InputView: UIView {
+final class InputView: UIView {
     var hintColor: UIColor? {
         get {
             return self.hintColor

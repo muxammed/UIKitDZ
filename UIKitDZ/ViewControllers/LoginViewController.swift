@@ -7,14 +7,14 @@
 
 /// Константы для использования везде в приложении
 struct Constants {
-    static let pinkColor: UIColor = UIColor(red: 161/255, green: 191/255, blue: 242/255, alpha: 1)
-    static let inactiveColor: UIColor = UIColor(red: 209/255, green: 211/255, blue: 217/255, alpha: 1)
-    static let ownBlackColor: UIColor = UIColor(red: 92/255, green: 92/255, blue: 92/255, alpha: 1)
+    static let pinkColor: UIColor = UIColor(red: 161 / 255, green: 191 / 255, blue: 242 / 255, alpha: 1)
+    static let inactiveColor: UIColor = UIColor(red: 209 / 255, green: 211 / 255, blue: 217 / 255, alpha: 1)
+    static let ownBlackColor: UIColor = UIColor(red: 92 / 255, green: 92 / 255, blue: 92 / 255, alpha: 1)
  }
 
 import UIKit
 /// это LoginViewController - для входа в приложение вводом емайла и пароля
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
     // MARK: - Visual Components
     
@@ -91,12 +91,6 @@ class LoginViewController: UIViewController {
         return switcher
     }()
 
-    // MARK: - Public Properties
-
-    // MARK: - Private Properties
-
-    // MARK: - Initializers
-
     // MARK: - UIViewController(*)
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -149,19 +143,11 @@ class LoginViewController: UIViewController {
     }
     
     @objc func loginButtonAction() {
-        self.navigationController?.pushViewController(BirthdaysViewController(), animated: true)
+        navigationController?.pushViewController(BirthdaysViewController(), animated: true)
     }
-    
-    // MARK: - IBAction
-
-    // MARK: - Private Methods
-
-    // MARK: - Types
-
-    // MARK: - Constants
-
+   
 }
-
+/// разширение для Шрифта подключает перечисление со сторонним шрифтом для удобного переключения
 extension UIFont {
     
     enum RoundedMPlusFont {

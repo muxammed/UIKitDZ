@@ -7,12 +7,8 @@
 
 import UIKit
 /// это BirthdaysViewController - контроллер с данными о днях рождениях c кнопкой добавления
-class BirthdaysViewController: UIViewController {
+final class BirthdaysViewController: UIViewController {
     
-    // MARK: - IBOutlet
-
-    // MARK: - Visual Components
-
     // MARK: - Public Properties
     var dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
@@ -23,11 +19,9 @@ class BirthdaysViewController: UIViewController {
     var navBarHeight: CGFloat = 0
     var persons: [Person] = []
 
-    // MARK: - Private Properties
-
-    // MARK: - Initializers
-
     // MARK: - UIViewController(*)
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         addDummyData()
@@ -99,13 +93,6 @@ class BirthdaysViewController: UIViewController {
         addPersonVC.delegate = self
         navigationController?.present(addPersonVC, animated: true, completion: nil)
     }
-    // MARK: - IBAction
-
-    // MARK: - Private Methods
-
-    // MARK: - Types
-
-    // MARK: - Constants
 }
 
 extension BirthdaysViewController: PersonEnterDelegate {
