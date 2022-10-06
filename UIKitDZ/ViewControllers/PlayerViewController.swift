@@ -8,7 +8,7 @@
 import AVFoundation
 import UIKit
 /// PlayerViewController - модальный viewController который будет проигрывать выбранные трэк
-class PlayerViewController: UIViewController {
+final class PlayerViewController: UIViewController {
     
     // MARK: - IBOutlet
     @IBOutlet weak var albumCoverContainerView: UIView!
@@ -35,12 +35,19 @@ class PlayerViewController: UIViewController {
     // MARK: - Initializers
     
     // MARK: - UIViewController(*)
+    
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(red: 251/255, green: 251/255, blue: 251/255, alpha: 1)
+        view.backgroundColor = UIColor(red: 251 / 255, green: 251 / 255, blue: 251 / 255, alpha: 1)
         
         checkNextPrevTracks()
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        audioPlayer.pause()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,27 +57,27 @@ class PlayerViewController: UIViewController {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        audioPlayer.pause()
-    }
     // MARK: - Public methods
     
-    @objc func updateTime(_ timer: Timer) {
+    @objc func updateTimeAction(_ timer: Timer) {
         playerTimeSlider.value = Float(audioPlayer.currentTime)
         currentTimeLabel.text = "\(audioPlayer.currentTime.minuteSecond)"
         remainingTimeLabel.text = "-\((audioPlayer.duration - audioPlayer.currentTime).minuteSecond)"
+    }
+    
+    fileprivate func setAlphaToZeroTo(to: CGFloat) {
+        self.albumCoverContainerView.alpha = to
+        self.artistNameLabel.alpha = to
+        self.trackNameLabel.alpha = to
+        self.trackNameTopLabel.alpha = to
+        self.view.layoutIfNeeded()
     }
     
     func configureAudioPlayer() {
         
         if trackNameLabel.alpha == 1 {
             UIView.animate(withDuration: 0.5) {
-                self.albumCoverContainerView.alpha = 0
-                self.artistNameLabel.alpha = 0
-                self.trackNameLabel.alpha = 0
-                self.trackNameTopLabel.alpha = 0
-                self.view.layoutIfNeeded()
+                self.setAlphaToZeroTo(to: 0.0)
             } completion: { _ in
                 self.albumCoverImage.image = self.songs?[self.currentTrack].songCoverImage
                 self.trackNameLabel.text = self.songs?[self.currentTrack].songName
@@ -93,7 +100,7 @@ class PlayerViewController: UIViewController {
                         self.playerTimeSlider.maximumValue = Float(self.audioPlayer.duration)
                         self.playerTimeSlider.value = 0.0
                         Timer.scheduledTimer(timeInterval: 1.0, target: self,
-                                             selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+                                             selector: #selector(self.updateTimeAction), userInfo: nil, repeats: true)
                         if self.isPlaying {
                             self.audioPlayer.play()
                         }
@@ -107,11 +114,7 @@ class PlayerViewController: UIViewController {
                 self.albumCoverImage.layer.cornerRadius = 10
                 self.albumCoverContainerView.dropShadow()
                 UIView.animate(withDuration: 0.5, animations: {
-                    self.albumCoverContainerView.alpha = 1
-                    self.artistNameLabel.alpha = 1
-                    self.trackNameLabel.alpha = 1
-                    self.trackNameTopLabel.alpha = 1
-                    self.view.layoutIfNeeded()
+                    self.setAlphaToZeroTo(to: 1.0)
                 })
             }
 
@@ -137,7 +140,7 @@ class PlayerViewController: UIViewController {
                     self.playerTimeSlider.maximumValue = Float(audioPlayer.duration)
                     self.playerTimeSlider.value = 0.0
                     Timer.scheduledTimer(timeInterval: 1.0, target: self,
-                                         selector: #selector(self.updateTime), userInfo: nil, repeats: true)
+                                         selector: #selector(self.updateTimeAction), userInfo: nil, repeats: true)
                     if isPlaying {
                         audioPlayer.play()
                     }
@@ -151,11 +154,7 @@ class PlayerViewController: UIViewController {
             self.albumCoverImage.layer.cornerRadius = 10
             self.albumCoverContainerView.dropShadow()
             UIView.animate(withDuration: 0.5, animations: {
-                self.albumCoverContainerView.alpha = 1
-                self.artistNameLabel.alpha = 1
-                self.trackNameLabel.alpha = 1
-                self.trackNameTopLabel.alpha = 1
-                self.view.layoutIfNeeded()
+                self.setAlphaToZeroTo(to: 1.0)
             })
         }
     }
@@ -173,9 +172,11 @@ class PlayerViewController: UIViewController {
             isPlaying = true
         }
     }
+    
     @IBAction func playerSliderAction(_ sender: UISlider) {
         audioPlayer.currentTime = TimeInterval(sender.value)
     }
+    
     @IBAction func nextTrackButtonAction(_ sender: Any) {
         if currentTrack == 0 {
             currentTrack += 1
@@ -183,6 +184,7 @@ class PlayerViewController: UIViewController {
             checkNextPrevTracks()
         }
     }
+    
     @IBAction func prevTrackButtonAction(_ sender: Any) {
         if currentTrack == 1 {
             currentTrack -= 1
@@ -190,6 +192,7 @@ class PlayerViewController: UIViewController {
             checkNextPrevTracks()
         }
     }
+    
     @IBAction func closeButtonAction(_ sender: Any) {
         UIView.animate(withDuration: 0.5, animations: {
             self.albumCoverContainerView.alpha = 0
@@ -202,6 +205,7 @@ class PlayerViewController: UIViewController {
         })
         
     }
+    
     @IBAction func shareButtonAction(_ sender: Any) {
         let shareItems = ["Зацени песьню \(songs?[currentTrack].songName ?? "")."]
         let activityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
@@ -218,12 +222,9 @@ class PlayerViewController: UIViewController {
             prevTrackButton.tintColor = .black
         }
     }
-    // MARK: - Types
-    
-    // MARK: - Constants
-    
 }
 
+/// расширение для добавления тени вьюхе
 extension UIView {
     func dropShadow() {
         layer.masksToBounds = false
@@ -237,12 +238,13 @@ extension UIView {
     }
 }
 
+/// разширение для перевода секунд в читаемый текст мин:сек
 extension TimeInterval {
     var minuteSecond: String {
         String(format: "%d:%02d", minute, second)
     }
     var minute: Int {
-        Int((self/60).truncatingRemainder(dividingBy: 60))
+        Int((self / 60).truncatingRemainder(dividingBy: 60))
     }
     var second: Int {
         Int(truncatingRemainder(dividingBy: 60))

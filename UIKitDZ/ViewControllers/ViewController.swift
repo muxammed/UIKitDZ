@@ -7,17 +7,21 @@
 
 import UIKit
 /// ViewController - основной где захардкоден список из двух песен
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    fileprivate func configure() {
         self.view.backgroundColor = .white
         let tapOne = UITapGestureRecognizer(target: self, action: #selector(firstSongTapped))
         firstSong.addGestureRecognizer(tapOne)
         let tapTwo = UITapGestureRecognizer(target: self, action: #selector(secondSongTapped))
         secondSong.addGestureRecognizer(tapTwo)
         loadDummyData()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configure()
     }
 
     // MARK: - IBOutlet
@@ -28,10 +32,6 @@ class ViewController: UIViewController {
     // MARK: - Public Properties
     var songs: [Song] = []
 
-    // MARK: - Private Properties
-
-    // MARK: - Initializers
-
     // MARK: - UIViewController(*)
 
     // MARK: - Public methods
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
             as? PlayerViewController {
             playerViewController.songs = songs
             playerViewController.currentTrack = 0
-            self.present(playerViewController, animated: true, completion: nil)
+            present(playerViewController, animated: true, completion: nil)
         }
         
     }
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
             as? PlayerViewController {
             playerViewController.songs = songs
             playerViewController.currentTrack = 1
-            self.present(playerViewController, animated: true, completion: nil)
+            present(playerViewController, animated: true, completion: nil)
         }
         
     }
@@ -69,13 +69,5 @@ class ViewController: UIViewController {
         songs.append(songone)
         songs.append(songtwo)
     }
-
-    // MARK: - IBAction
-    
-    // MARK: - Private Methods
-
-    // MARK: - Types
-    
-    // MARK: - Constants
 
 }
