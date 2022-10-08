@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130862EF28EF9F4900CEDB81 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130862EE28EF9F4900CEDB81 /* LessonViewController.swift */; };
+		132E48BD28F0C7D300D4090C /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132E48BC28F0C7D300D4090C /* ToolbarPickerView.swift */; };
 		13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030C28DB3F0C00D84241 /* AppDelegate.swift */; };
 		13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */; };
 		13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC031028DB3F0C00D84241 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		130862EE28EF9F4900CEDB81 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		132E48BC28F0C7D300D4090C /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 		13FC030928DB3F0C00D84241 /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FC030C28DB3F0C00D84241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				13FC031528DB3F0F00D84241 /* Assets.xcassets */,
 				13FC031728DB3F0F00D84241 /* LaunchScreen.storyboard */,
 				13FC031A28DB3F0F00D84241 /* Info.plist */,
+				130862EE28EF9F4900CEDB81 /* LessonViewController.swift */,
+				132E48BC28F0C7D300D4090C /* ToolbarPickerView.swift */,
 			);
 			path = UIKitDZ;
 			sourceTree = "<group>";
@@ -160,6 +166,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130862EF28EF9F4900CEDB81 /* LessonViewController.swift in Sources */,
+				132E48BD28F0C7D300D4090C /* ToolbarPickerView.swift in Sources */,
 				13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */,
 				13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */,
 				13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */,
