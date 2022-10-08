@@ -118,7 +118,7 @@ class ViewController: UIViewController {
         button.setTitle("", for: .normal)
         button.setBackgroundImage(UIImage(systemName: "square.and.arrow.up.fill"), for: .normal)
         button.contentMode = .scaleAspectFit
-        button.backgroundColor = .white
+        button.backgroundColor = .clear
         button.tintColor = .systemIndigo
         button.layer.cornerRadius = 10
         return button
@@ -130,16 +130,24 @@ class ViewController: UIViewController {
         return switcher
     }()
     
-    var fontPickerView: UIPickerView = {
-        let picker = UIPickerView()
-        return picker
+    var showFontPickerButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Выбрать шрифт", for: .normal)
+        button.layer.cornerRadius = 10
+        button.backgroundColor = .gray
+        return button
     }()
+    
+    var fontPickerView = ToolbarPickerView(frame: .zero)
+    
+    var hiddenTextField = UITextField()
     
     // MARK: - Public Properties
     let weights = [UIFont.Weight.ultraLight, UIFont.Weight.light,
                    UIFont.Weight.thin, UIFont.Weight.regular, UIFont.Weight.medium,
                    UIFont.Weight.bold, UIFont.Weight.black, UIFont.Weight.heavy]
     var curWeight = 2
+    var fontsListArray: [String] = []
     
     // MARK: - UIViewController(*)
     
@@ -148,47 +156,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         configure()
+        loadFontsNames()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        myTextView.frame = CGRect(x: 0,
-                                  y: self.view.safeAreaInsets.top,
-                                  width: self.view.bounds.width, height: self.view.bounds.height / 2)
-        textSizeSlider.frame = CGRect(x: 0, y: myTextView.frame.maxY + 20,
-                                      width: view.frame.width / 2, height: textSizeSlider.frame.height)
-        textSizeSlider.center.x = view.center.x
-        smallSizeLabel.frame = CGRect(x: textSizeSlider.frame.minX - 20, y: 0, width: 20, height: 20)
-        bigSizeLabel.frame = CGRect(x: textSizeSlider.frame.maxX + 20, y: 0, width: 20, height: 20)
-        smallSizeLabel.center.y = textSizeSlider.center.y
-        bigSizeLabel.center.y = textSizeSlider.center.y
-        
-        blackColorView.frame = CGRect(x: 0, y: textSizeSlider.frame.maxY + 50,
-                                      width: (view.frame.width / 4) - 30, height: (view.frame.width / 4) - 30)
-        blackColorView.layer.cornerRadius = blackColorView.frame.width / 2
-        blackColorView.center.x = (view.frame.width / 4) / 2
-        
-        greenColorView.frame = CGRect(x: 0, y: textSizeSlider.frame.maxY + 50,
-                                      width: (view.frame.width / 4) - 30, height: (view.frame.width / 4) - 30)
-        greenColorView.layer.cornerRadius = blackColorView.frame.width / 2
-        greenColorView.center.x = ((view.frame.width / 4) / 2) * 3
-        
-        blueColorView.frame = CGRect(x: 0, y: textSizeSlider.frame.maxY + 50,
-                                      width: (view.frame.width / 4) - 30, height: (view.frame.width / 4) - 30)
-        blueColorView.layer.cornerRadius = blackColorView.frame.width / 2
-        blueColorView.center.x = ((view.frame.width / 4) / 2) * 5
-        
-        grayColorView.frame = CGRect(x: 0, y: textSizeSlider.frame.maxY + 50,
-                                      width: (view.frame.width / 4) - 30, height: (view.frame.width / 4) - 30)
-        grayColorView.layer.cornerRadius = blackColorView.frame.width / 2
-        grayColorView.center.x = ((view.frame.width / 4) / 2) * 7
-        
-        thinnerButton.frame = CGRect(x: 10, y: blackColorView.frame.maxY + 50,
-                                     width: (view.frame.width / 2) - 20, height: 44)
-        bolderButton.frame = CGRect(x: view.frame.width / 2, y: blackColorView.frame.maxY + 50,
-                                     width: (view.frame.width / 2) - 20, height: 44)
-        shareTextButton.frame = CGRect(x: 10, y: bolderButton.frame.maxY + 10, width: 40, height: 40)
+        configureFrames()
     }
 
     // MARK: - Public methods
@@ -203,11 +177,13 @@ class ViewController: UIViewController {
         let activityViewController = UIActivityViewController(activityItems: [Constants.dummyText],
                                                               applicationActivities: nil)
             present(activityViewController, animated: true, completion: nil)
-                
+    }
+    
+    @objc func darkLightSwitcherAction(_ sender: UISwitch) {
+        overrideUserInterfaceStyle = sender.isOn ? .dark : .light
     }
     
     @objc func makeBolder() {
-        print("\(curWeight)")
         if curWeight < (weights.count - 1) {
             curWeight += 1
             myTextView.font = UIFont.systemFont(ofSize: myTextView.font?.pointSize ?? 17, weight: weights[curWeight])
@@ -233,9 +209,14 @@ class ViewController: UIViewController {
     @objc func sliderSlidedAction(_ sender: UISlider) {
         myTextView.font = UIFont(name: myTextView.font?.fontName ?? "Helvetica", size: CGFloat(sender.value))
     }
+    
+    @objc func showFontPickerAction(_ sender: UIButton) {
+        hiddenTextField.becomeFirstResponder()
+    }
 
     // MARK: - Private Methods
     fileprivate func configure() {
+        
         view.addSubview(myTextView)
         view.addSubview(smallSizeLabel)
         view.addSubview(textSizeSlider)
@@ -247,6 +228,18 @@ class ViewController: UIViewController {
         view.addSubview(thinnerButton)
         view.addSubview(bolderButton)
         view.addSubview(shareTextButton)
+        view.addSubview(showFontPickerButton)
+        view.addSubview(hiddenTextField)
+        view.addSubview(lightDarkSwitcher)
+        
+        fontPickerView.delegate = self
+        fontPickerView.dataSource = self
+        fontPickerView.toolbarDelegate = self
+        fontPickerView.backgroundColor = .white
+        
+        hiddenTextField.isHidden = true
+        hiddenTextField.inputView = fontPickerView
+        hiddenTextField.inputAccessoryView = fontPickerView.toolbar
         
         textSizeSlider.addTarget(self, action: #selector(sliderSlidedAction(_:)), for: .valueChanged)
         blackColorView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(setBlackColor(_:))))
@@ -257,5 +250,99 @@ class ViewController: UIViewController {
         thinnerButton.addTarget(self, action: #selector(makeThinner), for: .touchUpInside)
         bolderButton.addTarget(self, action: #selector(makeBolder), for: .touchUpInside)
         shareTextButton.addTarget(self, action: #selector(shareButtonAction), for: .touchUpInside)
+        showFontPickerButton.addTarget(self, action: #selector(showFontPickerAction), for: .touchUpInside)
+        lightDarkSwitcher.addTarget(self, action: #selector(darkLightSwitcherAction), for: .valueChanged)
+    }
+    
+    fileprivate func configureFrames() {
+        myTextView.frame = CGRect(x: 0,
+                                  y: self.view.safeAreaInsets.top,
+                                  width: self.view.bounds.width, height: self.view.bounds.height / 2)
+        textSizeSlider.frame = CGRect(x: 0, y: myTextView.frame.maxY + 20,
+                                      width: view.frame.width / 2, height: textSizeSlider.frame.height)
+        textSizeSlider.center.x = view.center.x
+        smallSizeLabel.frame = CGRect(x: textSizeSlider.frame.minX - 20, y: 0, width: 20, height: 20)
+        bigSizeLabel.frame = CGRect(x: textSizeSlider.frame.maxX + 20, y: 0, width: 20, height: 20)
+        smallSizeLabel.center.y = textSizeSlider.center.y
+        bigSizeLabel.center.y = textSizeSlider.center.y
+        
+        blackColorView.frame = CGRect(x: 0, y: textSizeSlider.frame.maxY + 50,
+                                      width: (view.frame.width / 4) - 30, height: (view.frame.width / 4) - 30)
+        blackColorView.layer.cornerRadius = blackColorView.frame.width / 2
+        blackColorView.center.x = (view.frame.width / 4) / 2
+        
+        greenColorView.frame = CGRect(x: 0, y: textSizeSlider.frame.maxY + 50,
+                                      width: (view.frame.width / 4) - 30, height: (view.frame.width / 4) - 30)
+        greenColorView.layer.cornerRadius = blackColorView.frame.width / 2
+        greenColorView.center.x = ((view.frame.width / 4) / 2) * 3
+        
+        blueColorView.frame = CGRect(x: 0, y: textSizeSlider.frame.maxY + 50,
+                                     width: (view.frame.width / 4) - 30, height: (view.frame.width / 4) - 30)
+        blueColorView.layer.cornerRadius = blackColorView.frame.width / 2
+        blueColorView.center.x = ((view.frame.width / 4) / 2) * 5
+        
+        grayColorView.frame = CGRect(x: 0, y: textSizeSlider.frame.maxY + 50,
+                                     width: (view.frame.width / 4) - 30, height: (view.frame.width / 4) - 30)
+        grayColorView.layer.cornerRadius = blackColorView.frame.width / 2
+        grayColorView.center.x = ((view.frame.width / 4) / 2) * 7
+        
+        thinnerButton.frame = CGRect(x: 10, y: blackColorView.frame.maxY + 50,
+                                     width: (view.frame.width / 2) - 20, height: 44)
+        bolderButton.frame = CGRect(x: view.frame.width / 2, y: blackColorView.frame.maxY + 50,
+                                    width: (view.frame.width / 2) - 20, height: 44)
+        shareTextButton.frame = CGRect(x: 10, y: bolderButton.frame.maxY + 10, width: 40, height: 40)
+        
+        showFontPickerButton.frame = CGRect(x: shareTextButton.frame.maxX + 10, y: 0, width: 245, height: 44)
+        showFontPickerButton.frame.origin.y = shareTextButton.frame.origin.y
+        
+        hiddenTextField.frame = CGRect(x: 0, y: view.frame.maxY - 50, width: 200, height: 44)
+        
+        lightDarkSwitcher.frame = CGRect(x: view.frame.width - 50 - 20, y: 0, width: 50, height: 44)
+        lightDarkSwitcher.center.y = showFontPickerButton.center.y
+    }
+    
+    private func loadFontsNames() {
+        for fontFamilyName in UIFont.familyNames {
+            for fontName in UIFont.fontNames(forFamilyName: fontFamilyName) {
+                fontsListArray.append(fontName)
+            }
+        }
+    }
+}
+
+/// UIPickerViewDelegate, UIPickerViewDataSource
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return fontsListArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int,
+                    forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        pickerLabel.font = UIFont(name: fontsListArray[row], size: 17)
+        pickerLabel.textColor = UIColor.black
+        pickerLabel.textAlignment = .center
+        pickerLabel.text = fontsListArray[row]
+        return pickerLabel
+    }
+}
+
+/// ToolbarPickerViewDelegate
+extension ViewController: ToolbarPickerViewDelegate {
+
+    func didTapDone() {
+        let row = fontPickerView.selectedRow(inComponent: 0)
+        fontPickerView.selectRow(row, inComponent: 0, animated: false)
+        myTextView.font = UIFont(name: fontsListArray[row], size: myTextView.font?.pointSize ?? 17)
+        hiddenTextField.resignFirstResponder()
+    }
+
+    func didTapCancel() {
+        hiddenTextField.text = nil
+        hiddenTextField.resignFirstResponder()
     }
 }
