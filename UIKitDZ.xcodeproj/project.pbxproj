@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131CB12D28F23D220038EB5B /* HKGrotesk-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 131CB12928F23D210038EB5B /* HKGrotesk-Regular.ttf */; };
+		131CB12E28F23D220038EB5B /* HKGrotesk-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 131CB12A28F23D210038EB5B /* HKGrotesk-Bold.ttf */; };
+		131CB12F28F23D220038EB5B /* HKGrotesk-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 131CB12B28F23D210038EB5B /* HKGrotesk-Light.ttf */; };
+		131CB13028F23D220038EB5B /* HKGrotesk-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 131CB12C28F23D220038EB5B /* HKGrotesk-Medium.ttf */; };
+		131CB13228F256B90038EB5B /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131CB13128F256B90038EB5B /* CartViewController.swift */; };
+		132F368528F22E2400BEFBF6 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 132F368428F22E2300BEFBF6 /* LessonViewController.swift */; };
+		1357ECC028F2E22D00168AE6 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357ECBF28F2E22D00168AE6 /* ProductRow.swift */; };
+		1357ECC328F2E36400168AE6 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357ECC228F2E36400168AE6 /* Product.swift */; };
+		1357ECC528F3068C00168AE6 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357ECC428F3068C00168AE6 /* SearchView.swift */; };
+		1357ECC728F32B3200168AE6 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1357ECC628F32B3200168AE6 /* FilterViewController.swift */; };
+		13F133B728F36BE5002F4048 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F133B628F36BE5002F4048 /* ToolbarPickerView.swift */; };
 		13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030C28DB3F0C00D84241 /* AppDelegate.swift */; };
 		13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */; };
 		13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC031028DB3F0C00D84241 /* ViewController.swift */; };
@@ -16,6 +27,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		131CB12928F23D210038EB5B /* HKGrotesk-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HKGrotesk-Regular.ttf"; sourceTree = "<group>"; };
+		131CB12A28F23D210038EB5B /* HKGrotesk-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HKGrotesk-Bold.ttf"; sourceTree = "<group>"; };
+		131CB12B28F23D210038EB5B /* HKGrotesk-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HKGrotesk-Light.ttf"; sourceTree = "<group>"; };
+		131CB12C28F23D220038EB5B /* HKGrotesk-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HKGrotesk-Medium.ttf"; sourceTree = "<group>"; };
+		131CB13128F256B90038EB5B /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		132F368428F22E2300BEFBF6 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		1357ECBF28F2E22D00168AE6 /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
+		1357ECC228F2E36400168AE6 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		1357ECC428F3068C00168AE6 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		1357ECC628F32B3200168AE6 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		13F133B628F36BE5002F4048 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 		13FC030928DB3F0C00D84241 /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FC030C28DB3F0C00D84241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +59,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		131CB12828F23D150038EB5B /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				131CB12A28F23D210038EB5B /* HKGrotesk-Bold.ttf */,
+				131CB12B28F23D210038EB5B /* HKGrotesk-Light.ttf */,
+				131CB12C28F23D220038EB5B /* HKGrotesk-Medium.ttf */,
+				131CB12928F23D210038EB5B /* HKGrotesk-Regular.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		1357ECBE28F2E21900168AE6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1357ECBF28F2E22D00168AE6 /* ProductRow.swift */,
+				1357ECC428F3068C00168AE6 /* SearchView.swift */,
+				13F133B628F36BE5002F4048 /* ToolbarPickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1357ECC128F2E35700168AE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1357ECC228F2E36400168AE6 /* Product.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		13FC030028DB3F0C00D84241 = {
 			isa = PBXGroup;
 			children = (
@@ -56,13 +107,19 @@
 		13FC030B28DB3F0C00D84241 /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
+				1357ECC128F2E35700168AE6 /* Models */,
+				1357ECBE28F2E21900168AE6 /* Views */,
+				131CB12828F23D150038EB5B /* fonts */,
 				13FC030C28DB3F0C00D84241 /* AppDelegate.swift */,
 				13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */,
 				13FC031028DB3F0C00D84241 /* ViewController.swift */,
+				131CB13128F256B90038EB5B /* CartViewController.swift */,
+				1357ECC628F32B3200168AE6 /* FilterViewController.swift */,
 				13FC031228DB3F0C00D84241 /* Main.storyboard */,
 				13FC031528DB3F0F00D84241 /* Assets.xcassets */,
 				13FC031728DB3F0F00D84241 /* LaunchScreen.storyboard */,
 				13FC031A28DB3F0F00D84241 /* Info.plist */,
+				132F368428F22E2300BEFBF6 /* LessonViewController.swift */,
 			);
 			path = UIKitDZ;
 			sourceTree = "<group>";
@@ -126,8 +183,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				131CB13028F23D220038EB5B /* HKGrotesk-Medium.ttf in Resources */,
 				13FC031928DB3F0F00D84241 /* LaunchScreen.storyboard in Resources */,
 				13FC031628DB3F0F00D84241 /* Assets.xcassets in Resources */,
+				131CB12E28F23D220038EB5B /* HKGrotesk-Bold.ttf in Resources */,
+				131CB12D28F23D220038EB5B /* HKGrotesk-Regular.ttf in Resources */,
+				131CB12F28F23D220038EB5B /* HKGrotesk-Light.ttf in Resources */,
 				13FC031428DB3F0C00D84241 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,9 +221,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				132F368528F22E2400BEFBF6 /* LessonViewController.swift in Sources */,
 				13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */,
+				1357ECC028F2E22D00168AE6 /* ProductRow.swift in Sources */,
+				1357ECC728F32B3200168AE6 /* FilterViewController.swift in Sources */,
+				131CB13228F256B90038EB5B /* CartViewController.swift in Sources */,
+				1357ECC528F3068C00168AE6 /* SearchView.swift in Sources */,
+				13F133B728F36BE5002F4048 /* ToolbarPickerView.swift in Sources */,
 				13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */,
 				13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */,
+				1357ECC328F2E36400168AE6 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
