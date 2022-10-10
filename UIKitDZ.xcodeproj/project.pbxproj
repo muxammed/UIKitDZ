@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13F133B928F39A74002F4048 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F133B828F39A74002F4048 /* LessonViewController.swift */; };
 		13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030C28DB3F0C00D84241 /* AppDelegate.swift */; };
 		13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */; };
 		13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC031028DB3F0C00D84241 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13F133B828F39A74002F4048 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		13FC030928DB3F0C00D84241 /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FC030C28DB3F0C00D84241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				13FC031528DB3F0F00D84241 /* Assets.xcassets */,
 				13FC031728DB3F0F00D84241 /* LaunchScreen.storyboard */,
 				13FC031A28DB3F0F00D84241 /* Info.plist */,
+				13F133B828F39A74002F4048 /* LessonViewController.swift */,
 			);
 			path = UIKitDZ;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13F133B928F39A74002F4048 /* LessonViewController.swift in Sources */,
 				13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */,
 				13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */,
 				13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */,
