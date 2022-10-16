@@ -7,19 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1312678B28F8BE1D00218A34 /* FoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1312678A28F8BE1D00218A34 /* FoodsViewController.swift */; };
+		138E6A5528F7835C005E9EA4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E6A5428F7835C005E9EA4 /* Constants.swift */; };
+		138E6A5828F78444005E9EA4 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 138E6A5728F78444005E9EA4 /* InputView.swift */; };
+		13D6BE2728FC394B006595C4 /* PaymentTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6BE2628FC394A006595C4 /* PaymentTypeView.swift */; };
+		13DB490428F7826A00A8CFFA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13DB490328F7826A00A8CFFA /* Colors.xcassets */; };
+		13DBCF1928FB558F00D4FE76 /* PizzasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DBCF1828FB558F00D4FE76 /* PizzasViewController.swift */; };
+		13DBCF1B28FB5F1900D4FE76 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DBCF1A28FB5F1900D4FE76 /* OrderViewController.swift */; };
+		13DBCF1D28FB5F6D00D4FE76 /* PizzaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DBCF1C28FB5F6D00D4FE76 /* PizzaView.swift */; };
+		13DBCF2028FB623900D4FE76 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DBCF1F28FB623900D4FE76 /* Pizza.swift */; };
+		13DBCF2228FB854500D4FE76 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DBCF2128FB854500D4FE76 /* PaymentViewController.swift */; };
+		13DBCF2428FB9E7600D4FE76 /* IngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DBCF2328FB9E7600D4FE76 /* IngredientView.swift */; };
+		13DBCF2628FB9F8800D4FE76 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13DBCF2528FB9F8800D4FE76 /* Order.swift */; };
 		13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030C28DB3F0C00D84241 /* AppDelegate.swift */; };
 		13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */; };
-		13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC031028DB3F0C00D84241 /* ViewController.swift */; };
+		13FC031128DB3F0C00D84241 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC031028DB3F0C00D84241 /* LoginViewController.swift */; };
 		13FC031428DB3F0C00D84241 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FC031228DB3F0C00D84241 /* Main.storyboard */; };
 		13FC031628DB3F0F00D84241 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13FC031528DB3F0F00D84241 /* Assets.xcassets */; };
 		13FC031928DB3F0F00D84241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FC031728DB3F0F00D84241 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1312678A28F8BE1D00218A34 /* FoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsViewController.swift; sourceTree = "<group>"; };
+		138E6A5428F7835C005E9EA4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		138E6A5728F78444005E9EA4 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		13D6BE2628FC394A006595C4 /* PaymentTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentTypeView.swift; sourceTree = "<group>"; };
+		13DB490328F7826A00A8CFFA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		13DBCF1828FB558F00D4FE76 /* PizzasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzasViewController.swift; sourceTree = "<group>"; };
+		13DBCF1A28FB5F1900D4FE76 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		13DBCF1C28FB5F6D00D4FE76 /* PizzaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaView.swift; sourceTree = "<group>"; };
+		13DBCF1F28FB623900D4FE76 /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
+		13DBCF2128FB854500D4FE76 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		13DBCF2328FB9E7600D4FE76 /* IngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientView.swift; sourceTree = "<group>"; };
+		13DBCF2528FB9F8800D4FE76 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		13FC030928DB3F0C00D84241 /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FC030C28DB3F0C00D84241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		13FC031028DB3F0C00D84241 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		13FC031028DB3F0C00D84241 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		13FC031328DB3F0C00D84241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13FC031528DB3F0F00D84241 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13FC031828DB3F0F00D84241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +61,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1312678928F8BDF800218A34 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				13FC031028DB3F0C00D84241 /* LoginViewController.swift */,
+				1312678A28F8BE1D00218A34 /* FoodsViewController.swift */,
+				13DBCF1828FB558F00D4FE76 /* PizzasViewController.swift */,
+				13DBCF1A28FB5F1900D4FE76 /* OrderViewController.swift */,
+				13DBCF2128FB854500D4FE76 /* PaymentViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		138E6A5628F78434005E9EA4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				138E6A5728F78444005E9EA4 /* InputView.swift */,
+				13DBCF1C28FB5F6D00D4FE76 /* PizzaView.swift */,
+				13DBCF2328FB9E7600D4FE76 /* IngredientView.swift */,
+				13D6BE2628FC394A006595C4 /* PaymentTypeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		13DBCF1E28FB622C00D4FE76 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				13DBCF1F28FB623900D4FE76 /* Pizza.swift */,
+				13DBCF2528FB9F8800D4FE76 /* Order.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		13FC030028DB3F0C00D84241 = {
 			isa = PBXGroup;
 			children = (
@@ -56,11 +112,15 @@
 		13FC030B28DB3F0C00D84241 /* UIKitDZ */ = {
 			isa = PBXGroup;
 			children = (
+				13DBCF1E28FB622C00D4FE76 /* Models */,
+				1312678928F8BDF800218A34 /* ViewControllers */,
+				138E6A5628F78434005E9EA4 /* Views */,
 				13FC030C28DB3F0C00D84241 /* AppDelegate.swift */,
 				13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */,
-				13FC031028DB3F0C00D84241 /* ViewController.swift */,
+				138E6A5428F7835C005E9EA4 /* Constants.swift */,
 				13FC031228DB3F0C00D84241 /* Main.storyboard */,
 				13FC031528DB3F0F00D84241 /* Assets.xcassets */,
+				13DB490328F7826A00A8CFFA /* Colors.xcassets */,
 				13FC031728DB3F0F00D84241 /* LaunchScreen.storyboard */,
 				13FC031A28DB3F0F00D84241 /* Info.plist */,
 			);
@@ -127,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13FC031928DB3F0F00D84241 /* LaunchScreen.storyboard in Resources */,
+				13DB490428F7826A00A8CFFA /* Colors.xcassets in Resources */,
 				13FC031628DB3F0F00D84241 /* Assets.xcassets in Resources */,
 				13FC031428DB3F0C00D84241 /* Main.storyboard in Resources */,
 			);
@@ -160,9 +221,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */,
+				1312678B28F8BE1D00218A34 /* FoodsViewController.swift in Sources */,
+				13D6BE2728FC394B006595C4 /* PaymentTypeView.swift in Sources */,
+				13DBCF1D28FB5F6D00D4FE76 /* PizzaView.swift in Sources */,
+				13FC031128DB3F0C00D84241 /* LoginViewController.swift in Sources */,
+				13DBCF2428FB9E7600D4FE76 /* IngredientView.swift in Sources */,
 				13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */,
+				13DBCF1928FB558F00D4FE76 /* PizzasViewController.swift in Sources */,
+				138E6A5828F78444005E9EA4 /* InputView.swift in Sources */,
+				13DBCF2228FB854500D4FE76 /* PaymentViewController.swift in Sources */,
 				13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */,
+				138E6A5528F7835C005E9EA4 /* Constants.swift in Sources */,
+				13DBCF2628FB9F8800D4FE76 /* Order.swift in Sources */,
+				13DBCF2028FB623900D4FE76 /* Pizza.swift in Sources */,
+				13DBCF1B28FB5F1900D4FE76 /* OrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
