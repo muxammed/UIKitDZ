@@ -1,24 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xJG-bq-9vL">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Мировые часы-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Мировые часы" image="globe" catalog="system" selectedImage="globe" id="fNB-GI-3rA"/>
+                    <navigationItem key="navigationItem" id="3Oy-G3-yFj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1086" y="-154"/>
+        </scene>
+        <!--Секундомер-->
+        <scene sceneID="cUE-ep-dl3">
+            <objects>
+                <viewController id="zxL-Fv-0t2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nK8-n2-S1q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="AFU-tb-xqp"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Секундомер" image="stopwatch.fill" catalog="system" selectedImage="stopwatch.fill" id="JKr-69-Tiy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dh8-2L-TBc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1070" y="684"/>
+        </scene>
+        <!--Будильник-->
+        <scene sceneID="KIQ-D6-hkc">
+            <objects>
+                <viewController id="Bjp-yc-KQB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oXC-wK-3Im">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gk4-8g-PWH"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Будильник" image="alarm.fill" catalog="system" selectedImage="alarm.fill" id="ypN-5W-vm9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ksX-z3-Rsh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-116" y="392"/>
+        </scene>
+        <!--Таймер-->
+        <scene sceneID="xk8-fb-bTQ">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="TVB-g0-daH" customClass="TimerViewController" customModule="UIKitDZ" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="13O-pR-NzH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lxs-YS-02r">
+                                <rect key="frame" x="0.0" y="155" width="414" height="202"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TVB-g0-daH" id="fvi-Y2-DUy"/>
+                                    <outlet property="delegate" destination="TVB-g0-daH" id="Tcs-wl-WAs"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bjA-Lf-jks"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Таймер" image="timer" catalog="system" selectedImage="timer" id="GUy-9P-Fc9">
+                        <color key="badgeColor" systemColor="systemYellowColor"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="timePicker" destination="Lxs-YS-02r" id="7ha-eQ-TuA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gbp-me-TMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724.63768115942037" y="571.875"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="dBR-kA-QPQ">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xJG-bq-9vL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ccc-Jl-Avy"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="inO-qC-77A">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemGray2Color"/>
+                        <color key="selectedImageTintColor" systemColor="systemYellowColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="uwE-wS-IHI"/>
+                        <segue destination="Bjp-yc-KQB" kind="relationship" relationship="viewControllers" id="QxW-FS-9ml"/>
+                        <segue destination="zxL-Fv-0t2" kind="relationship" relationship="viewControllers" id="kA9-eh-BTe"/>
+                        <segue destination="TVB-g0-daH" kind="relationship" relationship="viewControllers" id="bze-Gb-UlO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SMD-Z9-RqB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2006" y="-215"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alarm.fill" catalog="system" width="124" height="128"/>
+        <image name="globe" catalog="system" width="128" height="121"/>
+        <image name="stopwatch.fill" catalog="system" width="121" height="128"/>
+        <image name="timer" catalog="system" width="128" height="121"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
