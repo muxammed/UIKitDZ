@@ -72,7 +72,7 @@ final class OrderViewController: UIViewController {
     @objc func goToPayment() {
         guard let createdOrder = createdOrder else { return }
         delegate?.payButtonClicked(withOrder: createdOrder)
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Private Methods
@@ -83,7 +83,7 @@ final class OrderViewController: UIViewController {
         view.addSubview(pizzaImage)
         payButton.addTarget(self, action: #selector(goToPayment), for: .touchUpInside)
         
-        self.view.layoutSubviews()
+        view.layoutSubviews()
         
         payButton.frame = CGRect(x: 0, y: view.frame.height - 144, width: view.frame.width - 80, height: 54)
         payButton.center.x = view.center.x
@@ -100,7 +100,7 @@ final class OrderViewController: UIViewController {
             let height = CGFloat(Int(pizzaImage.frame.maxY) + 20 + (54 * index))
             ingridientView.frame = CGRect(x: 40, y: height, width: view.frame.width - 80, height: 44)
         }
-        self.view.layoutSubviews()
+        view.layoutSubviews()
     }
 }
 

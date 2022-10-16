@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// PaymentViewController экран оплаты заказа
 final class PaymentViewController: UIViewController {
     
     // MARK: - Visual Components
