@@ -14,27 +14,4 @@ class ViewController: UIViewController {
         
         self.view.backgroundColor = .white
     }
-
-    // MARK: - IBOutlet
-
-    // MARK: - Visual Components
-
-    // MARK: - Public Properties
-
-    // MARK: - Private Properties
-
-    // MARK: - Initializers
-
-    // MARK: - UIViewController(*)
-
-    // MARK: - Public methods
-
-    // MARK: - IBAction
-
-    // MARK: - Private Methods
-
-    // MARK: - Types
-
-    // MARK: - Constants
-
 }
