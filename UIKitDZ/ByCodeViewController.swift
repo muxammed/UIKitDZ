@@ -10,6 +10,7 @@ import UIKit
 /// ByCodeViewController экран верстки анкорами кодом
 class ByCodeViewController: UIViewController {
     
+    // MARK: - Visual Components
     let backView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -35,15 +36,24 @@ class ByCodeViewController: UIViewController {
         return view
     }()
     
+    // MARK: - Life cycle
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        configure()
+    }
+    
+    // MARK: - Public methods
     func configure() {
         view.backgroundColor = .white
-        
         backView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(backView)
         backView.addSubview(redView)
         backView.addSubview(yellowView)
         backView.addSubview(greenView)
-        
+        addConstraints()
+    }
+    
+    func addConstraints() {
         NSLayoutConstraint.activate([
             
             backView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -73,10 +83,5 @@ class ByCodeViewController: UIViewController {
             
             yellowView.widthAnchor.constraint(equalTo: yellowView.heightAnchor),
         ])
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        configure()
     }
 }

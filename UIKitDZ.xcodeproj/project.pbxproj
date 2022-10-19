@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131CF48229009AC000039153 /* ByStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131CF48129009AC000039153 /* ByStackViewController.swift */; };
 		13A39F3028FD216C009F2703 /* ByCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A39F2F28FD216C009F2703 /* ByCodeViewController.swift */; };
 		13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030C28DB3F0C00D84241 /* AppDelegate.swift */; };
 		13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		131CF48129009AC000039153 /* ByStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByStackViewController.swift; sourceTree = "<group>"; };
 		13A39F2F28FD216C009F2703 /* ByCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByCodeViewController.swift; sourceTree = "<group>"; };
 		13FC030928DB3F0C00D84241 /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FC030C28DB3F0C00D84241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				13FC031A28DB3F0F00D84241 /* Info.plist */,
 				13FC66F628FDEA0600F08728 /* ByConstraintsViewController.swift */,
 				13FC66F828FDF26A00F08728 /* ByVisualFormatViewController.swift */,
+				131CF48129009AC000039153 /* ByStackViewController.swift */,
 			);
 			path = UIKitDZ;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */,
 				13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */,
+				131CF48229009AC000039153 /* ByStackViewController.swift in Sources */,
 				13FC66F928FDF26A00F08728 /* ByVisualFormatViewController.swift in Sources */,
 				13A39F3028FD216C009F2703 /* ByCodeViewController.swift in Sources */,
 				13FC66F728FDEA0600F08728 /* ByConstraintsViewController.swift in Sources */,

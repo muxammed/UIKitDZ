@@ -9,6 +9,7 @@ import UIKit
 /// ByVisualFormatViewController - экран верстки визуал форматом наследовался ByCodeViewController что не писать код а переиспользовать и переопределить функцию конфигур
 final class ByVisualFormatViewController: ByCodeViewController {
     
+    // MARK: - Public methods
     override func configure() {
         view.backgroundColor = .white
         
@@ -21,6 +22,7 @@ final class ByVisualFormatViewController: ByCodeViewController {
         
     }
     
+    // MARK: - Private Methods
     private func addCons() {
         view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[v0]-(<=1)-[v1]",
                                                               options: .alignAllCenterX, metrics: nil,
@@ -51,5 +53,4 @@ final class ByVisualFormatViewController: ByCodeViewController {
         yellowView.widthAnchor.constraint(equalTo: yellowView.heightAnchor).isActive = true
     
     }
-
 }
