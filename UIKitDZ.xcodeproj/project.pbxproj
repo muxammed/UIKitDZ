@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13A39F3028FD216C009F2703 /* ByCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A39F2F28FD216C009F2703 /* ByCodeViewController.swift */; };
 		13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030C28DB3F0C00D84241 /* AppDelegate.swift */; };
 		13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */; };
 		13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC031028DB3F0C00D84241 /* ViewController.swift */; };
 		13FC031428DB3F0C00D84241 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FC031228DB3F0C00D84241 /* Main.storyboard */; };
 		13FC031628DB3F0F00D84241 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13FC031528DB3F0F00D84241 /* Assets.xcassets */; };
 		13FC031928DB3F0F00D84241 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13FC031728DB3F0F00D84241 /* LaunchScreen.storyboard */; };
+		13FC66F728FDEA0600F08728 /* ByConstraintsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC66F628FDEA0600F08728 /* ByConstraintsViewController.swift */; };
+		13FC66F928FDF26A00F08728 /* ByVisualFormatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FC66F828FDF26A00F08728 /* ByVisualFormatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13A39F2F28FD216C009F2703 /* ByCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByCodeViewController.swift; sourceTree = "<group>"; };
 		13FC030928DB3F0C00D84241 /* UIKitDZ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDZ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13FC030C28DB3F0C00D84241 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +28,8 @@
 		13FC031528DB3F0F00D84241 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13FC031828DB3F0F00D84241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		13FC031A28DB3F0F00D84241 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		13FC66F628FDEA0600F08728 /* ByConstraintsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByConstraintsViewController.swift; sourceTree = "<group>"; };
+		13FC66F828FDF26A00F08728 /* ByVisualFormatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByVisualFormatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +65,13 @@
 				13FC030C28DB3F0C00D84241 /* AppDelegate.swift */,
 				13FC030E28DB3F0C00D84241 /* SceneDelegate.swift */,
 				13FC031028DB3F0C00D84241 /* ViewController.swift */,
+				13A39F2F28FD216C009F2703 /* ByCodeViewController.swift */,
 				13FC031228DB3F0C00D84241 /* Main.storyboard */,
 				13FC031528DB3F0F00D84241 /* Assets.xcassets */,
 				13FC031728DB3F0F00D84241 /* LaunchScreen.storyboard */,
 				13FC031A28DB3F0F00D84241 /* Info.plist */,
+				13FC66F628FDEA0600F08728 /* ByConstraintsViewController.swift */,
+				13FC66F828FDF26A00F08728 /* ByVisualFormatViewController.swift */,
 			);
 			path = UIKitDZ;
 			sourceTree = "<group>";
@@ -162,6 +171,9 @@
 			files = (
 				13FC031128DB3F0C00D84241 /* ViewController.swift in Sources */,
 				13FC030D28DB3F0C00D84241 /* AppDelegate.swift in Sources */,
+				13FC66F928FDF26A00F08728 /* ByVisualFormatViewController.swift in Sources */,
+				13A39F3028FD216C009F2703 /* ByCodeViewController.swift in Sources */,
+				13FC66F728FDEA0600F08728 /* ByConstraintsViewController.swift in Sources */,
 				13FC030F28DB3F0C00D84241 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
